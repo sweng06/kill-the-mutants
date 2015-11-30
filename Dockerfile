@@ -1,28 +1,34 @@
 FROM java:8
 
-RUN apt-get update && apt-get install -y \
-    git
+# setup buildtime arguments and runtime variables
+ARG USERNAME
+ARG TESTNAME
+ARG TIMESTAMP
+ENV USERNAME $USERNAME
+ENV TESTNAME $TESTNAME
+ENV TIMESTAMP $TIMESTAMP
 
-// copy user's repo
-git clone https://github.com/${USER}/kill-the-mutants
+# copy user's repo
+RUN apt-get update && apt-get install -y git
+RUN git clone https://github.com/${USERNAME}/kill-the-mutants
 WORKDIR /kill-the-mutants
 
-// setup for a given test suite
-RUN mv /${TESTNAME}/${TIMESTAMP}/* /{$TESTNAME}
+# setup for a given test suite
+RUN mv ${TESTNAME}/${TIMESTAMP}/* ${TESTNAME}/
 
-// compile
-ENV DEPENDENCIES_DIR /../dependencies
+# compile
+ENV DEPENDENCIES_DIR dependencies
 ENV CLASSPATH ${DEPENDENCIES_DIR}/*
-RUN javac -cp "${CLASSPATH}" {$TESTNAME}/*.java
+RUN javac -cp "${CLASSPATH}" ${TESTNAME}/*.java
+ENV CLASSPATH=${CLASSPATH}:.
 
-// make sure it doesn't fail tests
-// TODO
+# make sure it doesn't fail tests
+# TODO
 
-// run mutation testing
+# run mutation testing
 CMD java -cp ${CLASSPATH} \
             org.pitest.mutationtest.commandline.MutationCoverageReport \
             --reportDir ./reports \
             --sourceDirs . \
-            --targetClasses {$TESTNAME}.Snippet \
-            --targetTests {$TESTNAME}.TestSuite
-        ;;
+            --targetClasses ${TESTNAME}.Snippet \
+            --targetTests ${TESTNAME}.TestSuite
