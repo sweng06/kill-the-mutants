@@ -1,36 +1,21 @@
-package example1;
+package examples.example1;
 
-/*
- * Special thanks to
- * http://users.csc.calpoly.edu/~djanzen/tdl/tddintro/helloworld/
- * for getting us started.
- */
+public class Snippet {
+	
+	private String name = "";
 
-public class Snippet
-{
+	public String getName() {
+		return name;
+	}
 
-   private String name = "";
+	public String getMessage() {
+		if (name == "")
+			return "Hello!";
+		
+		return "Hello " + name + "!";
+	}
 
-   public String getName()
-   {
-      return name;
-   }
-
-   public String getMessage()
-   {
-      if (name == "")
-      {
-         return "Hello!";
-      }
-      else
-      {
-         return "Hello " + name + "!";
-      }
-   }
-
-   public void setName(String name)
-   {
-      this.name = name;
-   }
-
+	public void setName(String name) {
+		this.name = name;
+	}
 }
