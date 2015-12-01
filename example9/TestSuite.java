@@ -1,4 +1,4 @@
-package example4;
+package example9;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
