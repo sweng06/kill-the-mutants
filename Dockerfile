@@ -1,5 +1,8 @@
 FROM java:8
 
+# install git
+RUN apt-get update && apt-get install -y git
+
 # setup buildtime arguments and runtime variables
 ARG USERNAME
 ARG TESTNAME
@@ -9,7 +12,6 @@ ENV TESTNAME $TESTNAME
 ENV TIMESTAMP $TIMESTAMP
 
 # copy user's repo
-RUN apt-get update && apt-get install -y git
 RUN git clone https://github.com/${USERNAME}/kill-the-mutants
 WORKDIR /kill-the-mutants
 
