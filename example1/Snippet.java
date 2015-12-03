@@ -1,4 +1,4 @@
-package examples.example1;
+package example1;
 
 public class Snippet {
 	

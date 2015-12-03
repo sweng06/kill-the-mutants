@@ -1,4 +1,4 @@
-package examples.example4;
+package example4;
 
 /*
  * Special thanks to
