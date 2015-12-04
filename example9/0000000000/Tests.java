@@ -16,15 +16,4 @@ public class Tests {
 		h = new Snippet();
 	}
 
-	@Test
-	public void testModArray() {
-		ArrayList<Integer> arrayList = new ArrayList<Integer>();
-		arrayList.add(2);
-		arrayList.add(4);
-		arrayList.add(6);
-		arrayList.add(8);
-		arrayList.add(10);
-		assertEquals(h.modArray(), arrayList);
-	}
-
 }

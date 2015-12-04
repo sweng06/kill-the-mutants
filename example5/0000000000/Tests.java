@@ -1,4 +1,4 @@
-package example2;
+package example5;
 
 /*
  * Special thanks to
@@ -21,12 +21,6 @@ public class Tests
 	public void setUp() throws Exception
 	{
 		h = new Snippet();
-	}
-
-	@Test
-	public void testHelloEmpty()
-	{
-		assertEquals(h.concatenate("He","llo"),"Hello");
 	}
 
 }

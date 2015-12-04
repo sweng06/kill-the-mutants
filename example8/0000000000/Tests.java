@@ -14,14 +14,4 @@ public class Tests {
 		h = new Snippet();
 	}
 
-	@Test
-	public void testFirstCase() {
-		assertEquals(h.printWord("mutation", 0, 1), "mutation");
-	}
-
-	@Test
-	public void testSecondCase() {
-		assertEquals(h.printWord("mutation", 1, 0), "m");
-	}
-
 }

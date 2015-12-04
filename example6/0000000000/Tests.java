@@ -1,4 +1,4 @@
-package example7;
+package example6;
 
 import static org.junit.Assert.*;
 
@@ -12,13 +12,6 @@ public class Tests {
 	@Before
 	public void setUp() throws Exception {
 		h = new Snippet();
-	}
-
-	@Test
-	public void testArrayIncre() {
-		int[] array = { 1, 2, 3, 4 };
-		int[] actualResult = h.arrayIncre(4);
-		assertArrayEquals(actualResult, array);
 	}
 
 }

@@ -1,4 +1,4 @@
-package example6;
+package example7;
 
 import static org.junit.Assert.*;
 
@@ -12,11 +12,6 @@ public class Tests {
 	@Before
 	public void setUp() throws Exception {
 		h = new Snippet();
-	}
-
-	@Test
-	public void testAddNums() {
-		assertEquals(h.addNums(1, 2), 3);
 	}
 
 }

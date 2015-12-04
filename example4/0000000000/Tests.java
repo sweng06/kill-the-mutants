@@ -23,12 +23,4 @@ public class Tests
 		h = new Snippet();
 	}
 
-	/* Inject student code here
-	@Test
-	public void testHelloEmpty()
-	{
-		assertEquals(h.getName(),"");
-		assertEquals(h.getMessage(),"Hello!");
-	}
-	*/
 }
