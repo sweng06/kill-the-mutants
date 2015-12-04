@@ -25,4 +25,4 @@ RUN javac -cp "${CLASSPATH}" ${TESTNAME}/*.java
 ENV CLASSPATH=${CLASSPATH}:.
 
 # run mutation testing
-CMD ../run.sh
+CMD ./run.sh
