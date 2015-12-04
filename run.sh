@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # default to JUnit
-case "${TEST_TOOL?junit}" in
+case ${TEST_TOOL?junit} in
 
   # vanilla JUnit
   junit)  java -cp $CLASSPATH $TESTNAME.TestSuite
