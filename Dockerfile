@@ -24,5 +24,8 @@ ENV CLASSPATH ${DEPENDENCIES_DIR}/*
 RUN javac -cp "${CLASSPATH}" ${TESTNAME}/*.java
 ENV CLASSPATH=${CLASSPATH}:.
 
+# make run.sh executable
+RUN chmod +x run.sh
+
 # run mutation testing
 CMD ./run.sh
