@@ -27,5 +27,5 @@ public class Tests
 	public void test() {
 		assertEquals("kill-the-mutants","kill-the-mutants");
 	}
-	
+
 }
