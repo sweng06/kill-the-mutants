@@ -1,4 +1,4 @@
-FROM java:8
+FROM opentable/baseimage-java8
 
 # install git
 RUN apt-get update && apt-get install -y git
@@ -24,8 +24,7 @@ ENV CLASSPATH ${DEPENDENCIES_DIR}/*
 RUN javac -cp "${CLASSPATH}" ${TESTNAME}/*.java
 ENV CLASSPATH=${CLASSPATH}:.
 
-# make run.sh executable
-RUN chmod +x run.sh
-
 # run mutation testing
-CMD ./run.sh
+CMD ["/sbin/my_init"]
+
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

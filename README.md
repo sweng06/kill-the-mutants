@@ -52,32 +52,52 @@ To run any of your test suites, you need to install Docker to your machine. Foll
 *Mac and Windows Users:*  
 If you are using Mac OS X or Windows, make sure to run the Docker Quickstart Terminal.
 
-All that's left is to build and run your container. Make sure you define the following environment variables:
+All that's left is to build and run your container. Make sure you define the following build arguments and environment variables:
 
 ```
+Build Arguments
+
 USERNAME    Your Github username
 TESTNAME    The example name you would like to run
 TIMESTAMP   The timestamp of the test suite you want to run
+
+Example usage:
+$ docker build --build-arg ENV=development .
+
+Environment Variables
+
+TEST_TOOL   The command you want to execute on your code
+  junit   :  Vanilla JUnit testing (default)
+  pit     :  PIT mutation testing tool
+  jumble  :  Jumble mutation testing tool
+
+Example usage:
+$ docker run --env ENV=development
 ```
 
- Here are some common commands to help you along:
+Here are some common commands to help you along:
 
 ```
 // Build your current directory into an image
-docker build --build-arg USERNAME=kill-the-mutants --build-arg TESTNAME=example1 --build-arg TIMESTAMP=1448836027 --tag=kill-the-mutants .
+$ docker build --build-arg USERNAME=kill-the-mutants --build-arg TESTNAME=example1 --build-arg TIMESTAMP=0000000000 --tag=kill-the-mutants .
 
 // Run a new docker container using an image
-docker run --name=kill-the-mutants kill-the-mutants
+$ docker run --name=kill-the-mutants --env TEST_TOOL=pit kill-the-mutants
 
 // Run an existing docker container
-docker run kill-the-mutants -a
+$ docker run --env TEST_TOOL=pit kill-the-mutants
+
+// Run an existing docker container and then open it (~ ssh)
+$ run -t -i kill-the-mutants /bin/sh
 
 // List all containers
-docker ps
+$ docker ps
 
-// Kill a running container
-docker stop apigoteway
+// Stop a running container
+$ docker stop kill-the-mutants
 
 // Remove a container
-docker rm apigoteway
+$ docker rm kill-the-mutants
 ```
+
+More commands can be found [here!](https://github.com/wsargent/docker-cheat-sheet).

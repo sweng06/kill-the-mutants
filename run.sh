@@ -1,7 +1,11 @@
 #!/bin/sh
 
+if [ -z "$TEST_TOOL" ]; then
+  TEST_TOOL="$1"
+fi
+
 # default to JUnit
-case ${TEST_TOOL?junit} in
+case "${TEST_TOOL?junit}" in
 
   # vanilla JUnit
   junit)  java -cp $CLASSPATH $TESTNAME.TestSuite
