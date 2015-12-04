@@ -39,7 +39,14 @@ CLASSPATH=${DEPENDENCIES_DIR}/*
 javac -cp "${CLASSPATH}" ${TESTNAME}/*.java
 CLASSPATH=${CLASSPATH}:.
 
-java -cp $CLASSPATH $TESTNAME.TestSuite
+java -cp $CLASSPATH \
+              org.pitest.mutationtest.commandline.MutationCoverageReport \
+              --reportDir ./reports \
+              --sourceDirs . \
+              --targetClasses $TESTNAME.Snippet \
+              --targetTests $TESTNAME.TestSuite
+
+echo 'hello'
 
 # default to JUnit
 #case "${TEST_TOOL?junit}" in

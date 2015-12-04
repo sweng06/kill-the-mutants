@@ -88,7 +88,7 @@ $ docker run --name=kill-the-mutants --env TEST_TOOL=pit kill-the-mutants
 $ docker run --env TEST_TOOL=pit kill-the-mutants
 
 // Run an existing docker container and then open it (~ ssh)
-$ run -t -i kill-the-mutants /bin/sh
+$ docker run -t -i kill-the-mutants /bin/sh
 
 // List all containers
 $ docker ps
