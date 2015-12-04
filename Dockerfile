@@ -24,13 +24,5 @@ ENV CLASSPATH ${DEPENDENCIES_DIR}/*
 RUN javac -cp "${CLASSPATH}" ${TESTNAME}/*.java
 ENV CLASSPATH=${CLASSPATH}:.
 
-# make sure it doesn't fail tests
-# TODO
-
 # run mutation testing
-CMD java -cp ${CLASSPATH} \
-            org.pitest.mutationtest.commandline.MutationCoverageReport \
-            --reportDir ./reports \
-            --sourceDirs . \
-            --targetClasses ${TESTNAME}.Snippet \
-            --targetTests ${TESTNAME}.TestSuite
+CMD ../run.sh
