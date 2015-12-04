@@ -1,8 +1,17 @@
 #!/bin/sh
 
-if [ -z "$TEST_TOOL" ]; then
-  TEST_TOOL="$1"
-fi
+# copy user's repo
+git clone https://github.com/${USERNAME}/kill-the-mutants
+cd kill-the-mutants
+
+# setup for a given test suite
+mv ${TESTNAME}/${TIMESTAMP}/* ${TESTNAME}/
+
+# compile
+DEPENDENCIES_DIR=dependencies
+CLASSPATH=${DEPENDENCIES_DIR}/*
+javac -cp "${CLASSPATH}" ${TESTNAME}/*.java
+CLASSPATH=${CLASSPATH}:.
 
 # default to JUnit
 case "${TEST_TOOL?junit}" in
