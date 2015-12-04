@@ -16,4 +16,9 @@ public class Tests {
 		h = new Snippet();
 	}
 
+	@Test
+	public void test() {
+		assertEquals("kill-the-mutants","kill-the-mutants");
+	}
+
 }
