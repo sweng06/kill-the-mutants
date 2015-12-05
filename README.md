@@ -52,27 +52,24 @@ To run any of your test suites, you need to install Docker to your machine. Foll
 *Mac and Windows Users:*  
 If you are using Mac OS X or Windows, make sure to run the Docker Quickstart Terminal.
 
-All that's left is to build and run your container. Make sure you define the following build arguments and environment variables:
+All that's left is to build and run your container. Make sure you define the following environment variables:
 
 ```
-Build Arguments
+Required:
 
 USERNAME    Your Github username
 TESTNAME    The example name you would like to run
 TIMESTAMP   The timestamp of the test suite you want to run
 
-Example usage:
-$ docker build --build-arg ENV=development .
-
-Environment Variables
+Optional:
 
 TEST_TOOL   The command you want to execute on your code
   junit   :  Vanilla JUnit testing (default)
   pit     :  PIT mutation testing tool
   jumble  :  Jumble mutation testing tool
 
-Example usage:
-$ docker run --env ENV=development
+// Example environment variable usage:
+$ docker run container_name --env VAR=value
 ```
 
 Here are some common commands to help you along:
@@ -97,4 +94,29 @@ $ docker stop kill-the-mutants
 $ docker rm kill-the-mutants
 ```
 
-More commands can be found [here!](https://github.com/wsargent/docker-cheat-sheet).
+More commands can be found [here](https://github.com/wsargent/docker-cheat-sheet)!
+
+##### Troubleshooting
+
+###### "Help! My docker container hangs!"
+
+Unfortunately this problem can occur when running docker on Windows or Mac OS X machines. You will need to remove your docker-machine and create a new one with larger memory and more processors. We suggest at least 2 processors and 4096 MB memory. Here is how you can recreate your machine:
+
+```
+docker-machine rm default
+docker-machine create -d virtualbox --virtualbox-memory 4096 --virtualbox-cpu-count 2 default
+```
+
+You can check your docker-machine's settings here if you are a mac user:
+
+```
+~/.docker/machine/machines/default/config.json
+```
+
+###### "Help! My docker container can't connect to the internet!"
+
+If you docker machine is open when you switch internet connections, it may lose it's connection with the outside world. All you have to do is restart your docker-machine and it will take care of itself.
+
+```
+docker-machine restart default
+```
