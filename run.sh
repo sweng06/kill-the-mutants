@@ -5,15 +5,17 @@ TESTNAME=${2:-$TESTNAME}
 TIMESTAMP=${3:-$TIMESTAMP}
 TEST_TOOL=${4:-$TEST_TOOL}
 
-# must run command with all options
-#if [[ $# -ne 4 ]]; then
-#  echo "Usage: USERNAME TESTNAME TIMESTAMP TEST_TOOL"
-#  exit 0
-#fi
+# check required parameters
+if [ -z ${USERNAME+x} ] ||
+   [ -z ${TESTNAME+x} ] ||
+   [ -z ${TIMESTAMP+x} ]; then
+  echo "Usage: USERNAME TESTNAME TIMESTAMP TEST_TOOL"
+  exit 0
+fi
 
-# remove user's repo if leftover from previous run
-if [ -d kill-the-mutants ]; then
-  rm -rf kill-the-mutants
+# set test tool to default if not set
+if [ -z "$TEST_TOOL" ]; then
+  TEST_TOOL="junit"
 fi
 
 # copy user's repo
