@@ -79,16 +79,13 @@ Here are some common commands to help you along:
 
 ```
 // Build your current directory into an image
-$ docker build --build-arg USERNAME=kill-the-mutants --build-arg TESTNAME=example1 --build-arg TIMESTAMP=0000000000 --tag=kill-the-mutants .
+$ docker build --tag=kill-the-mutants .
 
 // Run a new docker container using an image
-$ docker run --name=kill-the-mutants --env TEST_TOOL=pit kill-the-mutants
-
-// Run an existing docker container
-$ docker run --env TEST_TOOL=pit kill-the-mutants
+$ docker run --env USERNAME=kill-the-mutants --env TESTNAME=example1 --env TIMESTAMP=0000000000 --env TEST_TOOL=pit kill-the-mutants
 
 // Run an existing docker container and then open it (~ ssh)
-$ docker run -t -i kill-the-mutants /bin/sh
+$ docker run -t -i kill-the-mutants bash
 
 // List all containers
 $ docker ps
