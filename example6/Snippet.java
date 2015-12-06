@@ -9,14 +9,15 @@ public class Snippet {
 	}
 	
 	public int subtractNums(int one, int two) {
+		int subtracted = 0;
 		if(one < two)
-			int subtracted = two - one;
+			subtracted = two - one;
 		else
-			int subtracted = one - two;
+			subtracted = one - two;
 		return subtracted;
 	}
 	
-	public multiplyNums(int one, int two) {
+	public int multiplyNums(int one, int two) {
 		int multiplied = one * two;
 		return multiplied;
 	}
