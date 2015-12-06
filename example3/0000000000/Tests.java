@@ -27,7 +27,7 @@ public class Tests
 	public void test() {
 		int[] array = {2,4,5,3,1,7,4,9,10};
 		int[] sortedArray = h.doInsertionSort(array);
-		assertArrayEquals(sortedArray, [1,2,3,4,4,5,7,9,10]);
+		assertArrayEquals(sortedArray, new int[]{1,2,3,4,4,5,12,9,10});
 	}
 
 }
