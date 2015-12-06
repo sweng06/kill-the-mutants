@@ -10,10 +10,10 @@ public class Snippet {
 	
 	public int subtractNums(int one, int two) {
 		int subtracted = 0;
-		if(one >= two)
+		if(one > two)
 			subtracted = one - two;
 		else
-			subtracted = (two - one) * (-1);
+			subtracted = two - one;
 		return subtracted;
 	}
 	
