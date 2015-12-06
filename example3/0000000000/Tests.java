@@ -25,11 +25,10 @@ public class Tests
 
 	@Test
 	public void test() {
-		int[] array = {2,4,5,3,1,7,4,9,10};
+		int[] array = {2,4,5,3,1,7,9,10};
 		int[] sortedArray = h.doInsertionSort(array);
 		assertEquals(array.length, sortedArray.length);
-		assertArrayEquals(sortedArray, new int[]{1,2,3,4,4,5,7,9,10});
-		assertArrayEquals(h.doInsertionSort(new int[]{}), new int[]{});
+		assertArrayEquals(sortedArray, new int[]{1,2,3,4,5,7,9,10});
 	}
 
 }
