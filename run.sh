@@ -45,7 +45,7 @@ case "${TEST_TOOL?junit}" in
               --sourceDirs . \
               --targetClasses $TESTNAME.Snippet \
               --targetTests $TESTNAME.TestSuite \
-              --verbose
+              --verbose true
           ;;
 
   # Jumble mutation testing
