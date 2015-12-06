@@ -25,7 +25,8 @@ public class Tests
 
 	@Test
 	public void test() {
-		assertEquals("kill-the-mutants","kill-the-mutants");
+		String ktm = h.concatenate("kill-the", "mutants");
+		assertEquals(ktm, "kill-the-mutants");
 	}
 
 }
