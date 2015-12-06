@@ -13,7 +13,7 @@ public class Snippet {
 		if(one < two)
 			subtracted = two - one;
 		else
-			subtracted = one - two;
+			subtracted = (one - two) + 100;
 		return subtracted;
 	}
 	

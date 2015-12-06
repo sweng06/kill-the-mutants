@@ -21,10 +21,9 @@ public class Tests {
 	
 	@Test
 	public void testSubstract() {
-		assertEquals(h.subtractNums(5, 4), 1);
+		assertEquals(h.subtractNums(5, 4), 101);
 		assertEquals(h.subtractNums(4, 5), 1);
-		assertNotEquals(h.subtractNums(4, 5), -1);
-		//assertEquals(h.subtractNums(4, 4), 0);
+		assertEquals(h.subtractNums(4, 4), 100);
 	}
 	
 	@Test
