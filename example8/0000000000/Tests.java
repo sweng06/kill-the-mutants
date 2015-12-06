@@ -19,9 +19,9 @@ public class Tests {
 		assertEquals(h.printWord(0, 1), "Mutation Testing");
 	}
 
-	/*@Test
+	@Test
 	public void testSecondCase() {
 		assertEquals(h.printWord(1, 0), "M");
 	}
-*/
+
 }
