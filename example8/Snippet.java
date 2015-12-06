@@ -1,12 +1,11 @@
 package example8;
 
 public class Snippet {
-	// Prints out a word if x<y, else, print out substring of word
-	public String printWord(String word, int x, int y) {
-		if (word.length() <= 1) {
-			return null;
-		}
-		String trueWord = null;
+	// Prints out a word if x<y, else, print out one char of word
+	public String printWord(int x, int y) {
+
+		String word = "Mutation Testing";
+		String trueWord;
 
 		if (x < y) {
 			trueWord = word;

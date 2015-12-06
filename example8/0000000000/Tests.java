@@ -15,8 +15,13 @@ public class Tests {
 	}
 
 	@Test
-	public void test() {
-		assertEquals("kill-the-mutants","kill-the-mutants");
+	public void testFirstCase() {
+		assertEquals(h.printWord(0, 1), "Mutation Testing");
 	}
 
+	/*@Test
+	public void testSecondCase() {
+		assertEquals(h.printWord(1, 0), "M");
+	}
+*/
 }
