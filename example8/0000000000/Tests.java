@@ -24,4 +24,8 @@ public class Tests {
 		assertEquals(h.printWord(1, 0), "M");
 	}
 
+	@Test
+	public void testThirdCase() {
+		assertEquals(h.printWord(1, 1), "M");
+	}
 }
