@@ -2,23 +2,18 @@ package example6;
 
 public class Snippet {
 
-	// simple addition of 2 ints
-	public int addNums(int one, int two) {
-		int added = one + two;
-		return added;
+	public int crazyAdd(int one, int two) {
+		return (one + two + 14);
 	}
 	
-	public int subtractNums(int one, int two) {
-		int subtracted = 0;
+	public int crazySubtract(int one, int two) {
 		if(one > two)
-			subtracted = one - two;
+			return (one - two);
 		else
-			subtracted = two - one;
-		return subtracted;
+			return (two - one + 10);
 	}
 	
-	public int multiplyNums(int one, int two) {
-		int multiplied = one * two;
-		return multiplied;
+	public int crazyMultiply(int one, int two) {
+		return (one * two * 2);
 	}
 }
