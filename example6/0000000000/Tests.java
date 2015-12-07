@@ -16,18 +16,18 @@ public class Tests {
 
 	@Test
 	public void testAdd() {
-		assertEquals(h.addNums(1, 2), 17);
+		assertEquals(h.crazyAdd(1, 2), 17);
 	}
 	
 	@Test
 	public void testSubstract() {
-		assertEquals(h.subtractNums(5, 4), 1);
-		assertEquals(h.subtractNums(4, 5), 11);
+		assertEquals(h.crazySubtract(5, 4), 1);
+		assertEquals(h.crazySubtract(4, 5), 11);
 	}
 	
 	@Test
 	public void testMultiply() {
-		assertEquals(h.multiplyNums(4, 5), 40);
+		assertEquals(h.crazyMultiply(4, 5), 40);
 	}
 
 }
