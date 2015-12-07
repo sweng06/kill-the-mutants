@@ -22,8 +22,8 @@ public class Tests {
 	@Test
 	public void testSubstract() {
 		assertEquals(h.crazySubtract(5, 4), 1);
-		//assertEquals(h.crazySubtract(4, 5), 11);
-		//assertEquals(h.crazySubtract(4, 4), 10);
+		assertEquals(h.crazySubtract(4, 5), 11);
+		assertEquals(h.crazySubtract(4, 4), 10);
 	}
 	
 	@Test
