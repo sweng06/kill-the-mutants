@@ -17,8 +17,8 @@ public class Tests {
 	@Test
 	public void test() {
 		assertEquals(h.printWord(0, 1), "mutation");
-		assertEquals(h.printWord(1, 0), "testing");
-		assertEquals(h.printWord(1, 1), "kill-the-mutants");
+		//assertEquals(h.printWord(1, 0), "testing");
+		//assertEquals(h.printWord(1, 1), "kill-the-mutants");
 	}
 
 }
