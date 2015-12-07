@@ -18,7 +18,7 @@ public class Tests {
 	public void test() {
 		assertEquals(h.printWord(0, 1), "Mutation Testing");
 		assertEquals(h.printWord(1, 0), "M");
-		assertEquals(h.printWord(1, 1), "M");
+		//assertEquals(h.printWord(1, 1), "M");
 	}
 
 }
